@@ -26,7 +26,7 @@
         </Style>
     </Window.Resources>
     <Grid DataContext="{StaticResource customerOrdersViewSource}">
-        <TabControl x:Name="tbCtrlAutoLot" HorizontalAlignment="Left" Height="311" VerticalAlignment="Top" Width="439" Margin="316,32,0,0">
+        <TabControl x:Name="tbCtrlAutoLot" HorizontalAlignment="Left" Height="378" VerticalAlignment="Top" Width="439" Margin="316,32,0,0">
             <TabItem Header="Customer">
 
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource customerViewSource}" Margin="0,0,-21.4,-38.8">
@@ -34,7 +34,7 @@
                         <ColumnDefinition Width="82*"/>
                         <ColumnDefinition Width="373*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="24,10,10,162" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.ColumnSpan="2">
+                    <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="24,10,10.2,51.4" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="custIdColumn" Binding="{Binding CustId}" Header="Cust Id" Width="SizeToHeader"/>
                             <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
@@ -65,7 +65,7 @@
             </TabItem>
             <TabItem Header="Room">
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource roomViewSource}">
-                    <DataGrid x:Name="roomDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,23.6,73.2" RowDetailsVisibilityMode="VisibleWhenSelected">
+                    <DataGrid x:Name="roomDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,23.6,9.6" RowDetailsVisibilityMode="VisibleWhenSelected">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="floorColumn" Binding="{Binding Floor}" Header="Floor" Width="SizeToHeader"/>
                             <DataGridTextColumn x:Name="priceColumn" Binding="{Binding Price}" Header="Price" Width="SizeToHeader"/>
@@ -75,10 +75,11 @@
                     </DataGrid>
                     <Button x:Name="btnPrev2" Content="Previous" HorizontalAlignment="Left" Margin="24,198,0,0" VerticalAlignment="Top" Width="75"/>
                     <Button x:Name="btnNext2" Content="Next" HorizontalAlignment="Left" Margin="24,174,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-                    <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="122,145,0,0" VerticalAlignment="Top">
+                    <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="173,198,0,0" VerticalAlignment="Top" Height="142" Width="214">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="39.142"/>
+                            <ColumnDefinition Width="86.858"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -86,21 +87,26 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Label Content="Floor:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                        <TextBox x:Name="floorTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Floor, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                        <Label Content="Price:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-                        <TextBox x:Name="priceTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                        <Label Content="Room Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-                        <TextBox x:Name="roomIdTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding RoomId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsEnabled="False"/>
-                        <Label Content="Room Type Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-                        <TextBox x:Name="roomTypeIdTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding RoomTypeId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label Content="Floor:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="floorTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="0" Text="{Binding Floor, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="2"/>
+                        <Label Content="Price:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="1" VerticalAlignment="Center"/>
+                        <TextBox x:Name="priceTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="1" Text="{Binding Price, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="2"/>
+                        <Label Content="Room Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="2" VerticalAlignment="Center"/>
+                        <TextBox x:Name="roomIdTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="2" Text="{Binding RoomId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsEnabled="False" Grid.ColumnSpan="2"/>
+                        <Label Content="Room Type Id:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="3" VerticalAlignment="Center"/>
+                        <TextBox x:Name="roomTypeIdTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="2.8,4,0,4" Grid.Row="3" Text="{Binding RoomTypeId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="2"/>
                     </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Order">
-                <Grid Background="#FFE5E5E5">
-                    <Label x:Name="lblCustomers" Content="Customers" Margin="50,0,0,0"/>
-                    <ComboBox x:Name="cmbCustomers"  SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CustId,Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="29,40,0,0">
+                <Grid Background="#FFE5E5E5"  DataContext="{StaticResource customerOrdersViewSource}" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblCustomers" Margin="20,177,-1.4,-0.4" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <ComboBox x:Name="cmbCustomers"  SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.CustId,Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="23,40,0,0" Height="22" Grid.Column="1">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock>
@@ -114,8 +120,8 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Label x:Name="lblRoom" Content="Rooms" Margin="300,0,0,0"/>
-                    <ComboBox x:Name="cmbRoom" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="255,40,0,0" SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.RoomId,Mode=OneWay}">
+                    <Label x:Name="lblRoom" Content="Rooms" Margin="8.4,0,-8.4,-0.4" Grid.Column="2"/>
+                    <ComboBox x:Name="cmbRoom" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="172,40,0,0" SelectedValue="{Binding ElementName=ordersDataGrid,Path=SelectedItem.RoomId,Mode=OneWay}" Grid.Column="1" Height="22">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock>
@@ -130,6 +136,16 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+                    <DataGrid x:Name="ordersDataGrid" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="20,204,2.6,10.6" RowDetailsVisibilityMode="VisibleWhenSelected" Grid.Column="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="FirstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="LastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="PriceColumn" Binding="{Binding Price}" Header="Price" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="FloorColumn" Binding="{Binding Floor}" Header="Floor" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="RoomTypeIdColumn" Binding="{Binding RoomTypeId}" Header="RoomTypeId" Width="SizeToHeader"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -138,46 +154,35 @@
 
         <GroupBox x:Name="gbOperations" Button.Click="gbOperations_Click"   HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="101,61,0,0">
             <StackPanel x:Name="spOperations" Margin="0,0,-131,-129.4">
-                <Button x:Name="btnNew" Content="New" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btnNew" Click="btnAdd_Click" Content="New" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btnEdit" Click="btnEditO_Click" Content="Edit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btnDelete" Content="Delete" Click="btnDeleteO_Click" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
 
             </StackPanel>
 
         </GroupBox>
         <GroupBox x:Name="gbActions"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="101,202,0,0">
-            <StackPanel Margin="0,0,-12,-25.4">
-                <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="IsEnabled" Value="false" />
-                        <Style.Triggers>
-                            <!--Butonul Save va fi inactiv daca exista erori de validare -->
-                            <MultiDataTrigger>
-                                <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding ElementName=lastNameTextBox, Path=(Validation.HasError)}" Value="false" />
+            <StackPanel x:Name="spActions" Margin="0,0,-12,-25.4">
+                <Button x:Name="btnSave" Content="Save" Button.Click="btnSave_Click" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="IsEnabled" Value="false" />
+                            <Style.Triggers>
+                                <!--Butonul Save va fi inactiv daca exista erori de validare -->
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ElementName=lastNameTextBox, Path=(Validation.HasError)}" Value="false" />
 
-                                </MultiDataTrigger.Conditions>
-                                <Setter Property="IsEnabled" Value="true" />
-                            </MultiDataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="IsEnabled" Value="true" />
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
                 </Button>
                 <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="75"/>
             </StackPanel>
         </GroupBox>
-        <DataGrid x:Name="ordersDataGrid" AutoGenerateColumns="False"
-EnableRowVirtualization="True" ItemsSource="{Binding}"
-RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True" Margin="405,199,96.6,97">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="FirstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="LastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="PriceColumn" Binding="{Binding Make}" Header="Price" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="FloorColumn" Binding="{Binding Color}" Header="Floor" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="RoomTypeIdColumn" Binding="{Binding Color}" Header="RoomTypeId" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
 
     </Grid>
 </Window>

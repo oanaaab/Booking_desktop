@@ -60,8 +60,11 @@ namespace Booking_desktop
             ctx.Rooms.Load();
             BindDataGrid();
             customerOrdersVSource =((System.Windows.Data.CollectionViewSource)(this.FindResource("customerOrdersViewSource")));
+            customerOrdersVSource.Source = ctx.Orders.Local;
+            ctx.Orders.Load();
 
-           //customerOrdersVSource.Source = ctx.Orders.Local;
+
+            //customerOrdersVSource.Source = ctx.Orders.Local;
             ctx.Orders.Load();
             ctx.Rooms.Load();
             cmbCustomers.ItemsSource = ctx.Customers.Local;
@@ -205,7 +208,7 @@ namespace Booking_desktop
             {
                 try
                 {
-                    room = (Room)customerDataGrid.SelectedItem;
+                    room = (Room)roomDataGrid.SelectedItem;
                     room.RoomTypeId = Convert.ToInt32(roomTypeIdTextBox.Text.Trim());
                     room.Floor = Convert.ToInt32(floorTextBox.Text.Trim());
                     room.Price = Convert.ToInt32(priceTextBox.Text.Trim());
@@ -278,7 +281,6 @@ namespace Booking_desktop
                                  inv.Floor,
                                  inv.RoomTypeId,
                              };
-            customerOrdersVSource.Source = queryOrder.ToList();
         }
 
 
@@ -290,17 +292,19 @@ namespace Booking_desktop
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            //action = ActionState.New;
             TabItem ti = tbCtrlAutoLot.SelectedItem as TabItem;
 
             switch (ti.Header)
             {
-                case "Customers":
+                case "Customer":
                     SaveCustomers();
                     break;
-                case "Inventory":
+                case "Room":
                     SaveRooms();
                     break;
-                case "Orders":
+                case "Order":
+                    SaveOrders();
                     break;
             }
             ReInitialize();
